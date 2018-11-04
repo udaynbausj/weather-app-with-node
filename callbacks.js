@@ -15,7 +15,16 @@ request({
 },(error,response,body) =>{
     //console.log(JSON.stringify(body,undefined,4));
     //console.log(body.results[0].locations[0].latLng);
-
-    console.log(`Latitude is : ${body.results[0].locations[0].latLng.lat}`);
-    console.log(`Longitude is : ${body.results[0].locations[0].latLng.lng}`);
+    if(error){
+        console.log('Unable to reach the server :(');
+        //window.alert('Unable to reach the server :(');
+    }else if(body.status === 'ZERO_RESULTS'){
+        console.log('Please enter valid address');
+        //window.alert('Please enter valid address');
+    }else{
+        //window.alert(`Latitude is : ${body.results[0].locations[0].latLng.lat}`);
+        //window.alert(`Longitude is : ${body.results[0].locations[0].latLng.lng}`);
+        console.log(`Latitude is : ${body.results[0].locations[0].latLng.lat}`);
+        console.log(`Longitude is : ${body.results[0].locations[0].latLng.lng}`);
+    }
 });
