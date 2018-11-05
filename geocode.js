@@ -4,8 +4,7 @@ module.exports.geocodeAddress = function(address){
     var Encoded_location = encodeURI(address);
     console.log(Encoded_location);
     request({
-        url : 'http://www.mapquestapi.com/geocoding/v1/address?key=YOURKEY\n' +
-            `\n&location=${Encoded_location}`,
+        url : `https://geocode.xyz/${Encoded_location}?json=1`,
         //url : `https://maps.googleapis.com/maps/api/geocode/json?address=${Encoded_location}key=YOURKEY`,
         json : true
     },(error,response,body) =>{
