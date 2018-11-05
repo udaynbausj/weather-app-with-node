@@ -6,7 +6,7 @@ module.exports.geocodeAddress = function(address){
     request({
         url : 'http://www.mapquestapi.com/geocoding/v1/address?key=YOURKEY\n' +
             `\n&location=${Encoded_location}`,
-        //url : `https://maps.googleapis.com/maps/api/geocode/json?address=${Encoded_location}key=AIzaSyALMiVvM57a4WCZtVdqeLBucr9uCw-Bs2c`,
+        //url : `https://maps.googleapis.com/maps/api/geocode/json?address=${Encoded_location}key=YOURKEY`,
         json : true
     },(error,response,body) =>{
         //console.log(JSON.stringify(body,undefined,4));
